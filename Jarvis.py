@@ -66,7 +66,7 @@ def sendEmail(to, content):
 
 if __name__ == "__main__":
     wishme()
-    # speak("Naveen ia my originator ")
+    # speak("Naveen is my originator ")
     while True:
         query = takeCommand().lower()
 
@@ -79,10 +79,13 @@ if __name__ == "__main__":
             speak(result)
 
         elif 'youtube' in query:
-            webbrowser.open("youtube.com")
+            search = query.split(" ")[1]
+            url = f"https://www.youtube.com/results?search_query={search}"
+            webbrowser.get().open(url)
 
         elif 'google' in query:
-            webbrowser.open("google.com")
+            search = query.split(" ")[1]
+            webbrowser.get().open(f"https://google.com/search?q={search}")
 
         elif 'ptu result' in query:
             webbrowser.open("m.ptuexam.com")
